@@ -35,6 +35,14 @@ app.post('*',function(req,res){
     console.log('data:')
     console.log('----');
     console.log(req.body);
+
+    //debug..
+    var Incident = {"Test": "Value", "Test2": "Value2"};
+
+    Object.keys(Incident).forEach(function(parameter) {
+        console.log("Parameter: "+parameter+", Value: "+Incident[parameter]);
+    });
+
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({ "variable": "value", "variable2": "value2" }));
 })
