@@ -17,7 +17,8 @@ app.get('*',function(req,res){
     console.log('data:')
     console.log('----');
     console.log(req.body);
-    res.send('OK');
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ "variable": "value", "variable2": "value2" }));
 })
 
 app.post('*',function(req,res){
@@ -26,7 +27,8 @@ app.post('*',function(req,res){
     console.log('data:')
     console.log('----');
     console.log(req.body);
-    res.send('OK');
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ "variable": "value", "variable2": "value2" }));
 })
 
 app.listen(serverhostport);
