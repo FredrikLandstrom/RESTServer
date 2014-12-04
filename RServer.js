@@ -17,6 +17,9 @@ app.get('*',function(req,res){
     console.log('data:')
     console.log('----');
     console.log(req.body);
+    req.body.Incident.each(function(key,value){
+        console.log("Value: "+value);
+    })
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({ "variable": "value", "variable2": "value2" }));
 })
