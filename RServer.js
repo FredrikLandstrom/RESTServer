@@ -28,3 +28,6 @@ app.post('*',function(req,res){
     console.log(req.body);
     res.send('OK');
 })
+
+app.listen(serverhostport);
+console.log("RESTing Seppo server is running on http://localhost:" + serverhostport);
